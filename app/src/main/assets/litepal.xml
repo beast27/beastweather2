@@ -7,7 +7,7 @@
     <list>
         <mapping class = "com.beastweather2.android.db.Province" />
         <mapping class = "com.beastweather2.android.db.City" />
-        <mapping class = "com.beastweather2.android.db.Country" />
+        <mapping class = "com.beastweather2.android.db.County" />
     </list>
 
 </litepal>
