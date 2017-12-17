@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">beastweather2</string>
+    <string name="api_key1">83918143afff498c94930c8beef98d24</string>
+    <string name="api_key2">bc0418b57b2d4918819d3974ac1285d9</string>
 </resources>

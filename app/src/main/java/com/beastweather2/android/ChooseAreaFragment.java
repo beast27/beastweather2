@@ -1,6 +1,7 @@
 package com.beastweather2.android;
 
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.beastweather2.android.db.City;
 import com.beastweather2.android.db.County;
 import com.beastweather2.android.db.Province;
+import com.beastweather2.android.gson.Weather;
 import com.beastweather2.android.util.HttpUtil;
 import com.beastweather2.android.util.Utility;
 
@@ -85,6 +87,13 @@ public class ChooseAreaFragment extends Fragment {
                 else if(currentLevel == LEVEL_CITY){
                     selectedCity = cityList.get(position);
                     queryCounties();
+                }
+                else if(currentLevel == LEVEL_COUNTY){
+                    String weatherId = countyList.get(position).getWeatherid();
+                    Intent intent = new Intent(getContext(), WeatherActivity.class);
+                    intent.putExtra("weather_id",weatherId);
+                    startActivity(intent);
+                    getActivity().finish();
                 }
             }
         });
