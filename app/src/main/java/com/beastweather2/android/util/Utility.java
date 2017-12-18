@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import com.beastweather2.android.db.City;
 import com.beastweather2.android.db.County;
 import com.beastweather2.android.db.Province;
+import com.beastweather2.android.gson.PicBing;
 import com.beastweather2.android.gson.Weather;
 import com.google.gson.Gson;
 
@@ -88,6 +89,19 @@ public class Utility {
         }catch (Exception e){
             e.printStackTrace();
         }
+        return null;
+    }
+    //JSON analyze image url
+    public static PicBing handleImageRes(String response){
+            try{
+                JSONObject jsonObject = new JSONObject(response);
+                JSONArray jsonArray = jsonObject.getJSONArray("images");
+                String picBingContent = jsonArray.getJSONObject(0).toString();
+                return new Gson().fromJson(picBingContent,PicBing.class);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         return null;
     }
 }

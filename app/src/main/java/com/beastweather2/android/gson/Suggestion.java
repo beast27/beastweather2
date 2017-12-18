@@ -5,10 +5,10 @@ package com.beastweather2.android.gson;
  */
 
 public class Suggestion {
-    public Conf conf;
+    public Comf comf;
     public Cw cw;
     public Sport sport;
-    public class Conf{
+    public class Comf{
         public String txt;
     }
     public class Cw{
