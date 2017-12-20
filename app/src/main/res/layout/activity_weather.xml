@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <include
+        layout="@layout/title" />
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,10 +12,14 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="com.beastweather2.android.WeatherActivity">
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+
 
         <ImageView
             android:id="@+id/pic_bing"
@@ -34,7 +44,7 @@
             android:orientation="vertical"
             android:fitsSystemWindows="true"
             android:background="#0000">
-            <include layout="@layout/title"/>
+
             <include layout="@layout/now"/>
             <include layout="@layout/forecast"/>
             <include layout="@layout/aqi"/>
@@ -49,5 +59,12 @@
             android:layout_gravity="start"
             android:name="com.beastweather2.android.ChooseAreaFragment"
             android:id="@+id/choose_area_fragment"/>
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:name="com.beastweather2.android.SettingsActivity"
+            android:id="@+id/settings_menu"/>
     </android.support.v4.widget.DrawerLayout>
 </FrameLayout>
+</LinearLayout>

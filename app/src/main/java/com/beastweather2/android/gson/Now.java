@@ -6,8 +6,6 @@ package com.beastweather2.android.gson;
 
 public class Now {
     public String tmp;
-    public Cond cond;
-    public class Cond{
-        public String txt;
-    }
+    public String cond_txt;
+    public String cond_code;
 }

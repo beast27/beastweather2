@@ -6,8 +6,6 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.beastweather2.android.gson.Weather;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

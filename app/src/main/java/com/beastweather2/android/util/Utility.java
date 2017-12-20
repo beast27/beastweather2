@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import com.beastweather2.android.db.City;
 import com.beastweather2.android.db.County;
 import com.beastweather2.android.db.Province;
+import com.beastweather2.android.gson.Air;
 import com.beastweather2.android.gson.PicBing;
 import com.beastweather2.android.gson.Weather;
 import com.google.gson.Gson;
@@ -83,9 +84,20 @@ public class Utility {
     public static Weather handleWeatherRes(String response){
         try{
             JSONObject jsonObject = new JSONObject(response);
-            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather6");
             String weatherContent = jsonArray.getJSONObject(0).toString();
             return new Gson().fromJson(weatherContent,Weather.class);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public static Air handleAirRes(String response){
+        try{
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather6");
+            String airContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(airContent,Air.class);
         }catch (Exception e){
             e.printStackTrace();
         }
